@@ -11,7 +11,7 @@ const getMostFrequent = (arr: string[]) => {
    acc[val] = (acc[val] || 0 ) + 1
    return acc
   }, {});
-  return Object.keys(hashmap).reduce((a, b) => hashmap[a] > hashmap[b] ? a : b)
+  return Object.keys(hashmap).reduce((a, b) => hashmap[a] > hashmap[b] ? a : b, '')
 }
 
 const isValidChar = (char: string) => {
@@ -40,7 +40,7 @@ function App() {
   const handleChange: (index: number) => React.ChangeEventHandler<HTMLInputElement> = (index: number ) => (event) => {
     const updatedArray = [...first];
     if (isValidChar(event.target.value)) {
-      updatedArray[index] = event.target.value
+      updatedArray[index] = event.target.value.toLowerCase()
       setFirst(updatedArray)
     }
   }
