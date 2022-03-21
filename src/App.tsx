@@ -30,11 +30,11 @@ function App() {
     .filter(word => first.every((char, index) => char ? word[index] === char : true))
 
   const handleIncludedChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setIncludedLetters(Array.from(event.target.value));
+    setIncludedLetters(Array.from(event.target.value.toLowerCase()));
   }
 
   const handleExcludedChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setExcludedLetters(Array.from(event.target.value));
+    setExcludedLetters(Array.from(event.target.value.toLowerCase()));
   }
 
   const handleChange: (index: number) => React.ChangeEventHandler<HTMLInputElement> = (index: number ) => (event) => {
